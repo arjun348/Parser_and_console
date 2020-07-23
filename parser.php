@@ -1,5 +1,6 @@
 <?php
-    $content = file_get_contents('https://www.tasteofhome.com/recipes/jalapeno-mac-and-cheese/');
+    $url = $_GET['url'];
+    $content = file_get_contents($url);
     $htmlDom = new DOMDocument;
     @$htmlDom->loadHTML($content);
     $xpath = new DomXPath($htmlDom);
